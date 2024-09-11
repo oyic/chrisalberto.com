@@ -21,12 +21,8 @@ jobs:
         run: npm run build
       - name: Show files
         run: 'ls -a'
-      - name: Delete node_module files
-        uses: JesseTG/rm@v1.0.3
-        with:
-            path: |
-                'node_modules/'
-      - name: Show files after delete
+      - name: Show files after node_modules deleted via rm
         run: | 
+            rm -R "node_modules/"
             ls -a
 
