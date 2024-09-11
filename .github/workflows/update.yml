@@ -28,5 +28,5 @@ jobs:
           compress: true
           remoteDir: '/themes/chris/'
           localDir: '.'
-          exclude: './node_modules/**/*,.git*,.DS_Store'
+          exclude: 'node_modules/,.git*,.DS_Store'
 
