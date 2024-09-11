@@ -49,16 +49,17 @@ Options::addTranslatable('NavigationMain', [
     ],
 ]);
 
-Options::addGlobal('Navigation',
-[
-[
+Options::addGlobal(
+    'Navigation',
+    [
+    [
     'label' => __('Logo', 'flynt'),
     'name' => 'labelsTab',
     'type' => 'tab',
     'placement' => 'top',
     'endpoint' => 0
-],
-[
+    ],
+    [
     'label' => '',
     'name' => 'labels',
     'type' => 'group',
@@ -72,5 +73,6 @@ Options::addGlobal('Navigation',
             ],
         ],
     ],
-]
-]);
+    ]
+    ]
+);
