@@ -45,3 +45,9 @@
     font-weight: 700;
     src: url('../assets/fonts/public-sans-v14-latin-700italic.woff2') format('woff2');
   }
+
+  @font-face {
+    font-display: swap;
+    font-family: 'Teko';
+    src: url('../assets/fonts/Teko-VariableFont_wght.ttf') format('truetype');
+  }
