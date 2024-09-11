@@ -22,10 +22,12 @@ jobs:
       - name: Show files
         run: 'ls -a'
       - name: Delete node_module files
-        uses: Lyoko-Jeremie/js-rm-github-action@master
+        uses: JesseTG/rm@v1.0.3
         with:
             path: |
-                './node_modules/'
+                'node_modules/'
       - name: Show files after delete
-        run: 'ls -a'
+        run: | 
+            rm -R "node_modules/"
+            ls -a
 
