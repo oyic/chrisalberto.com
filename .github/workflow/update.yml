@@ -1,0 +1,32 @@
+name: FlyntWP Update
+
+on:
+  push:
+    branches:
+      - main
+      - staging
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20.x
+      - name: Install PHP Dependecies
+        run: |
+          composer install -o
+          npm install
+      - name : NPM Build
+        run: npm run build
+      - name: Deploy Files
+        uses: wangyucode/sftp-upload-action@v2.0.2
+        with:
+          username: ${{ secrets.SFTP_USERNAME }}
+          host:  ${{ secrets.SFTP_SERVER }}
+          password: ${{ secrets.SFTP_PASSWORD }}
+          compress: true
+          remoteDir: '/wordpress/wp-content/themes/chris/'
+          localDir: '.'
+          exclude: 'node_modules,.git*,.DS_Store'
+
