@@ -19,7 +19,11 @@ jobs:
           npm install
       - name : NPM Build
         run: npm run build
-      - name: Deploy Files
+      - name: Manually delete node_modules
+        run: |
+          rm -R "node_modules/"
+          ls -a
+      - name: Deploy Files to Server
         uses: wangyucode/sftp-upload-action@v2.0.2
         with:
           username: ${{ secrets.SFTP_USERNAME }}
