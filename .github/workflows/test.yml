@@ -25,7 +25,7 @@ jobs:
         uses: Lyoko-Jeremie/js-rm-github-action@master
         with:
             path: |
-                '/node_modules/'
+                './node_modules/'
       - name: Show files after delete
         run: 'ls -a'
 
