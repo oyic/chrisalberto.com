@@ -26,7 +26,7 @@ jobs:
           host:  ${{ secrets.SFTP_SERVER }}
           password: ${{ secrets.SFTP_PASSWORD }}
           compress: true
-          remoteDir: '/wordpress/wp-content/themes/chris/'
+          remoteDir: '/themes/chris/'
           localDir: '.'
           exclude: 'node_modules,.git*,.DS_Store'
 
