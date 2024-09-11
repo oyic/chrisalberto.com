@@ -28,6 +28,5 @@ jobs:
                 'node_modules/'
       - name: Show files after delete
         run: | 
-            rm -R "node_modules/"
             ls -a
 
