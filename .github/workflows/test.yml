@@ -1,0 +1,31 @@
+name: list created node_modules and delete
+
+on:
+  push:
+    branches:
+      - main
+      - staging
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20.x
+      - name: Install PHP Dependecies
+        run: |
+          composer install -o
+          npm install
+      - name : NPM Build
+        run: npm run build
+      - name: Show files
+        run: 'ls -a'
+      - name: Delete node_module files
+        uses: Lyoko-Jeremie/js-rm-github-action@master
+        with:
+            path: |
+                '/node_modules/'
+      - name: Show files after delete
+        run: 'ls -a'
+
