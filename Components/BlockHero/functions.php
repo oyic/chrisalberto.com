@@ -31,7 +31,7 @@ function getACFLayout(): array
                 'media_upload' => 0,
             ],
             FieldVariables\getButtons(),
-          
+
             FieldVariables\getBackground(),
             [
                 'label' => __('Options', 'flynt'),

@@ -34,6 +34,7 @@
   --color-text: hsla(0, 0%, 100%, 1);
   --color-text-muted: hsl(0, 0%, 100%, 0.8);
 }
+
 [data-theme="secondary"] {
   --color-accent: hsla(79, 100%, 60%, 1);
   --color-background: var(--color-secondary);
@@ -42,6 +43,7 @@
   --color-text: hsla(0, 0%, 100%, 1);
   --color-text-muted: hsl(0, 0%, 100%, 0.8);
 }
+
 [data-theme="tertiary"] {
   --color-accent: hsla(79, 100%, 60%, 1);
   --color-background: var(--color-tertiary);
