@@ -26,6 +26,31 @@
   --color-text-muted: hsl(0, 0%, 100%, 0.8);
 }
 
+[data-theme="primary"] {
+  --color-accent: hsla(79, 100%, 60%, 1);
+  --color-background: var(--color-primary);
+  --color-background-secondary: hsl(228, 56%, 98%, 0.06);
+  --color-border-secondary: hsl(0, 0%, 90%, 0.68);
+  --color-text: hsla(0, 0%, 100%, 1);
+  --color-text-muted: hsl(0, 0%, 100%, 0.8);
+}
+[data-theme="secondary"] {
+  --color-accent: hsla(79, 100%, 60%, 1);
+  --color-background: var(--color-secondary);
+  --color-background-secondary: hsl(228, 56%, 98%, 0.06);
+  --color-border-secondary: hsl(0, 0%, 90%, 0.68);
+  --color-text: hsla(0, 0%, 100%, 1);
+  --color-text-muted: hsl(0, 0%, 100%, 0.8);
+}
+[data-theme="tertiary"] {
+  --color-accent: hsla(79, 100%, 60%, 1);
+  --color-background: var(--color-tertiary);
+  --color-background-secondary: hsl(228, 56%, 98%, 0.06);
+  --color-border-secondary: hsl(0, 0%, 90%, 0.68);
+  --color-text: hsla(0, 0%, 100%, 1);
+  --color-text-muted: hsl(0, 0%, 100%, 0.8);
+}
+
 $breakpoint-mobile-horizontal: 480px;
 $breakpoint-tablet: 768px;
 $breakpoint-tablet-horizontal: 1024px;
@@ -52,4 +77,7 @@ $breakpoint-desktop: 1280px;
   --container-spacing: clamp(1rem, 2.5vw + 0.25rem, 2.25rem);
   --component-spacing: clamp(3rem, 6.5vw + 1.05rem, 6.25rem);
   --border-radius: 5px;
+  --color-primary: hsla(235, 17%, 25%,1);
+  --color-secondary: hsla(202, 24%, 27%,1);
+  --color-tertiary: hsla(193, 21%, 40%, 1);
 }

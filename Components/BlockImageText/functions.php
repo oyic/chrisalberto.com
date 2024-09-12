@@ -4,6 +4,12 @@ namespace Flynt\Components\BlockImageText;
 
 use Flynt\FieldVariables;
 
+add_filter('Flynt/addComponentData?name=BlockImageText', function (array $data): array {
+    print_r($data['ctaButton']);
+    var_dump($data['ctaButton']);
+    return $data;
+});
+
 function getACFLayout(): array
 {
     return [
@@ -42,6 +48,11 @@ function getACFLayout(): array
                 'delay' => 0,
                 'media_upload' => 0,
                 'required' => 1,
+            ],
+            [
+                'label' => __('CTA', 'flynt'),
+                'name' => 'ctaButton',
+                'type' => 'link',
             ],
             [
                 'label' => __('Options', 'flynt'),
