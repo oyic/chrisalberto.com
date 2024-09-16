@@ -5,8 +5,6 @@ namespace Flynt\Components\BlockImageText;
 use Flynt\FieldVariables;
 
 add_filter('Flynt/addComponentData?name=BlockImageText', function (array $data): array {
-    print_r($data['ctaButton']);
-    var_dump($data['ctaButton']);
     return $data;
 });
 
@@ -30,6 +28,19 @@ function getACFLayout(): array
                 'choices' => [
                     'left' => sprintf('<i class=\'dashicons dashicons-align-left\' title=\'%1$s\'></i>', __('Image on the left', 'flynt')),
                     'right' => sprintf('<i class=\'dashicons dashicons-align-right\' title=\'%1$s\'></i>', __('Image on the right', 'flynt'))
+                ],
+                'default_value' => 'left',
+                'wrapper' => [
+                    'width' => '33'
+                ]
+            ],
+            [
+                'label' => __('Parallax', 'flynt'),
+                'name' => 'parallax',
+                'type' => 'true_false',
+                'ui' => 1,
+                'wrapper' => [
+                    'width' => '33'
                 ]
             ],
             [
@@ -49,27 +60,8 @@ function getACFLayout(): array
                 'media_upload' => 0,
                 'required' => 1,
             ],
-            [
-                'label' => __('CTA', 'flynt'),
-                'name' => 'ctaButton',
-                'type' => 'link',
-            ],
-            [
-                'label' => __('Options', 'flynt'),
-                'name' => 'optionsTab',
-                'type' => 'tab',
-                'placement' => 'top',
-                'endpoint' => 0
-            ],
-            [
-                'label' => '',
-                'name' => 'options',
-                'type' => 'group',
-                'layout' => 'row',
-                'sub_fields' => [
-                    FieldVariables\getTheme()
-                ]
-            ]
+            FieldVariables\getButtons(),
+            FieldVariables\getBackground()
         ]
     ];
 }

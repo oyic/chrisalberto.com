@@ -5,7 +5,6 @@ namespace Flynt\Components\BlockHero;
 use Flynt\FieldVariables;
 
 add_filter('Flynt/addComponentData?name=BlockHero', function (array $data): array {
-
     return $data;
 });
 
@@ -46,7 +45,8 @@ function getACFLayout(): array
                 'type' => 'group',
                 'layout' => 'row',
                 'sub_fields' => [
-                   FieldVariables\getSize()
+                    FieldVariables\getSize(),
+                    FieldVariables\getHeaderSlots()
                 ]
             ]
         ]

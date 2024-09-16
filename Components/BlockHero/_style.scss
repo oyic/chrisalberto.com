@@ -1,4 +1,6 @@
 flynt-component[name='BlockHero'] {
+  @import 'node_modules/locomotive-scroll/dist/locomotive-scroll';
+
   @media (min-width: $breakpoint-tablet-horizontal) {
     .container {
       align-items: center;
@@ -6,8 +8,8 @@ flynt-component[name='BlockHero'] {
       gap: var(--column-gap);
       justify-content: space-around;
 
-      > * {
-        flex-basis: 50%;
+      >* {
+        // flex-basis: 50%;
         margin-block-start: 0;
       }
 
@@ -18,6 +20,7 @@ flynt-component[name='BlockHero'] {
       &[data-image-position='right'] {
         flex-direction: row-reverse;
       }
+
     }
   }
 }

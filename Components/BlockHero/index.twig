@@ -1,46 +1,26 @@
-<flynt-component name="BlockHero" class="componentSpacing" 
-{{ options.theme ? 'data-theme="' ~ options.theme ~ '"' }}
-{{ background.type=='color' ? 'data-theme="'~background.color ~ '"'}}
->
-  <div class="container" {{ imagePosition ? 'data-image-position="' ~ imagePosition ~ '"' }}>
-    {% if image %}
-      <figure class="figure" data-size="medium" data-align="center">
-        {% if image.post_mime_type == 'image/svg+xml' %}
-          <img
-            class="figure-image-svg lazyload"
-            src="{{ placeholderImage(image.width, image.height, 'rgba(125, 125, 125, 0.1)') }}"
-            width="{{ image.width }}"
-            height="{{ image.height }}"
-            data-src="{{ image.src }}"
-            alt="{{ image.alt|e }}">
-        {% else %}
-          <img
-            class="figure-image lazyload"
-            src="{{ image.src|resizeDynamic(768) }}"
-            width="{{ image.width }}"
-            height="{{ image.height }}"
-            srcset="{{ placeholderImage(image.width, image.height, 'rgba(125, 125, 125, 0.1)') }}"
-            data-srcset="
-              {{ image.src|resizeDynamic(1920) }} 1920w,
-              {{ image.src|resizeDynamic(1600) }} 1600w,
-              {{ image.src|resizeDynamic(1440) }} 1440w,
-              {{ image.src|resizeDynamic(1366) }} 1366w,
-              {{ image.src|resizeDynamic(1024) }} 1024w,
-              {{ image.src|resizeDynamic(768) }} 768w,
-              {{ image.src|resizeDynamic(640) }} 640w"
-            data-sizes="auto"
-            alt="{{ image.alt|e }}">
-        {% endif %}
-        {% if image.caption %}
-          <figcaption>{{ image.caption|e }}</figcaption>
-        {% endif %}
-      </figure>
-    {% endif %}
-    <div data-size="{{options.size}}" data-align="center">
-      {{ contentHtml|e('wp_kses_post') }}
-    </div>
-    {% if ctaButton %}
-      <a class="button" href="{{ctaButton.url}}">{{ctaButton.title}}</a>
-    {% endif %}
-  </div>
+<flynt-component name="BlockHero" class="componentSpacing" {{ options.theme ? 'data-theme="' ~ options.theme ~ '"' }} {{ background.type=='color' ? 'data-theme="'~background.color ~ '"'}} {% if background.type in ['image','video'] %} data-has-background {% endif %} {% if background.type == 'image' and background.parallax %} style="background-image: url('{{ background.image.src }}');" data-parallax {% endif %}>
+	{% if background.type in ['image','video'] and background.parallax!=true %}
+		{% include 'Partials/_background.twig' %}
+	{% endif %}
+	<div class="container" {{ imagePosition ? 'data-image-position="' ~ imagePosition ~ '"' }}>
+		<div data-size="{{options.size}}" data-align="center">
+			{% if titles %}
+				<{{options.headerSlots}} class='titles'>
+					{% if titles.uppertile %}
+						<span class='uppertitle>{{titles.uppertitle}}</span>
+																			{% endif %}
+																			{{titles.title}}
+																			{% if titles.subtitle %}
+																				<span class=' subtitle'>{{titles.subtitle}}</span>
+					{% endif %}
+
+				</{{options.headerSlots}}>
+			{% endif %}
+
+			{{ contentHtml|e('wp_kses_post') }}
+			{% if CTA_links %}
+				{% include('Partials/_buttons.twig') %}
+			{% endif %}
+		</div>
+	</div>
 </flynt-component>

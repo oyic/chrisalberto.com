@@ -4,7 +4,7 @@
 
 // Applies a consistent margin for most common elements.
 :where(h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, p, .paragraph, ul, ol, pre, table, figure, blockquote, form, fieldset, dl, address, details, hr, aside, video) {
-  + * {
+  +* {
     margin-block-start: var(--flow-space);
   }
 }
@@ -18,8 +18,18 @@ body,
   line-height: 1.5;
 }
 
-h1, h2, h3, h4, h5, h6,
-.h1, .h2, .h3, .h4, .h5, .h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
   --flow-space: 2.5rem;
   font-family: var(--font-family-heading);
   font-weight: 500;
@@ -163,12 +173,12 @@ small {
   --item-spacing: 0.66em;
   padding-inline-start: 1.5rem;
 
-  li + li {
+  li+li {
     margin-block-start: var(--item-spacing);
   }
 
   li {
-    > ul,
+    >ul,
     ol {
       --item-spacing: 0.33em;
       margin-block-start: var(--item-spacing);
@@ -226,7 +236,7 @@ table {
  */
 
 .button,
-.wp-block-button > .wp-block-button__link {
+.wp-block-button>.wp-block-button__link {
   --button-background-color: var(--color-accent);
   --button-border-color: var(--color-accent);
   --button-border-width: 2px;
@@ -315,7 +325,16 @@ label {
   margin-block-start: 0;
 }
 
-[type="tel"], [type="url"], [type="text"], [type="date"], [type="email"], [type="search"], [type="number"], [type="password"], textarea, select {
+[type="tel"],
+[type="url"],
+[type="text"],
+[type="date"],
+[type="email"],
+[type="search"],
+[type="number"],
+[type="password"],
+textarea,
+select {
   appearance: none;
   background-color: transparent;
   border: 2px solid var(--color-border-secondary);
@@ -374,7 +393,7 @@ textarea {
   margin-inline-end: 8px;
   vertical-align: top;
 
-  + label {
+  +label {
     color: var(--color-text);
     display: inline-block;
     font: inherit;
@@ -392,10 +411,12 @@ flynt-component {
 }
 
 .pageWrapper {
+  background-color: var(--color-primary);
   display: grid;
   grid-template-columns: 100%;
   grid-template-rows: auto 1fr auto;
   min-block-size: 100%;
+
 
   .admin-bar & {
     padding-block-start: var(--wp-admin--admin-bar--height);
@@ -406,14 +427,15 @@ flynt-component {
   margin-block: var(--component-spacing);
   margin-inline: 0;
 
-  &[data-theme] {
+  &[data-theme],
+  &[data-has-background] {
     margin: 0;
     padding-block: var(--component-spacing);
     padding-inline: 0;
   }
 }
 
-.wp-block-post-content > .alignfull {
+.wp-block-post-content>.alignfull {
   margin-inline: auto;
   max-inline-size: var(--content-max-width-full) !important;
 }
@@ -463,13 +485,13 @@ flynt-component {
 }
 
 [data-flow="layout"] {
-  > * + * {
+  >*+* {
     margin-block-start: calc(var(--component-spacing) / 2);
   }
 }
 
 [data-flow="content"] {
-  > * + * {
+  >*+* {
     margin-block-start: var(--flow-space);
   }
 }
@@ -481,8 +503,18 @@ flynt-component {
   [data-text-align="center"] {
     p,
     .paragraph,
-    h1, h2, h3, h4, h5, h6,
-    .h1, .h2, .h3, .h4, .h5, .h6 {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    .h1,
+    .h2,
+    .h3,
+    .h4,
+    .h5,
+    .h6 {
       text-wrap: balance;
 
       br {
@@ -549,4 +581,49 @@ flynt-component {
 [data-theme] {
   background-color: var(--color-background);
   color: var(--color-text);
+}
+
+[data-has-background] {
+  color: var(--color-text);
+
+  &::after {
+    background: radial-gradient(circle, rgba(2, 5, 23, 0.896) 0%, rgba(238, 237, 237, .75) 100%);
+    block-size: 100%;
+    content: "";
+    display: block;
+    inline-size: 100%;
+    inset-block-start: 0;
+    inset-inline-start: 0;
+    position: absolute;
+    z-index: -1;
+  }
+}
+
+[data-parallax] {
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+h1,
+h2,
+h3 {
+  span {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: 400;
+    line-height: 1.2;
+  }
+}
+
+.mainContentWrapper {
+  display: flex;
+  gap: 10px;
+
+  .mainContent {
+    flex: 1;
+    inline-size: 100vw;
+    margin-inline-end: 0;
+  }
 }

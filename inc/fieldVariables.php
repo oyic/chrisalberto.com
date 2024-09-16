@@ -88,21 +88,21 @@ function getTextAlignment($args = []): array
 function getBackground($args = []): array
 {
     return
-    [
         [
-            'label' => __('Background', 'flynt'),
-            'name' => 'backgroundTab',
-            'type' => 'tab',
-            'placement' => 'Top',
-            'endpoint' => 0,
-        ],
+            [
+                'label' => __('Background', 'flynt'),
+                'name' => 'backgroundTab',
+                'type' => 'tab',
+                'placement' => 'Top',
+                'endpoint' => 0,
+            ],
 
-        [
-            'label' => '',
-            'name' => 'background',
-            'type' => 'group',
-            'layout' => 'block',
-            'sub_fields' => [
+            [
+                'label' => '',
+                'name' => 'background',
+                'type' => 'group',
+                'layout' => 'block',
+                'sub_fields' => [
                     [
                         'label' => __('Type', 'flynt'),
                         'name' => 'type',
@@ -123,10 +123,13 @@ function getBackground($args = []): array
 
                     [
                         'label' => __('Image', 'flynt'),
+                        'instructions' => __('Image-Format: JPG, PNG, SVG, WebP.', 'flynt'),
+                        'aria-label' => __('Background Image', 'flynt'),
                         'name' => 'image',
                         'type' => 'image',
-                        'aria-label' => __('Background Image', 'flynt'),
                         'required' => 1,
+                        'mime_types' => 'jpg,jpeg,png,svg,webp',
+
                         'wrapper' => [
                             'width' => 25
                         ],
@@ -187,10 +190,12 @@ function getBackground($args = []): array
 
                     [
                         'label' => __('Mobile Image', 'flynt'),
+                        'instructions' => __('Image-Format: JPG, PNG, SVG, WebP.', 'flynt'),
                         'name' => 'mobile_image',
                         'type' => 'image',
                         'aria-label' => __('Mobile Image', 'flynt'),
                         'required' => 1,
+                        'mime_types' => 'jpg,jpeg,png,svg,webp',
                         'wrapper' => [
                             'width' => 25
                         ],
@@ -265,11 +270,11 @@ function getBackground($args = []): array
                         ],
                     ],
 
+                ],
+
+
             ],
-
-
-        ],
-    ];
+        ];
 }
 
 function getTitles($args = []): array
@@ -277,9 +282,9 @@ function getTitles($args = []): array
 
     $titles = [
         [
-        'label' => __('Title', 'flynt'),
-        'name' => 'title',
-        'type' => 'text',
+            'label' => __('Title', 'flynt'),
+            'name' => 'title',
+            'type' => 'text',
         ]
     ];
 
@@ -301,25 +306,25 @@ function getTitles($args = []): array
 
 
     return
-    [
-        'label' => '',
-        'name' => 'titles',
-        'type' => 'group',
-        'layout' => 'row',
-        'sub_fields' => [
-            $titles
-        ]
+        [
+            'label' => '',
+            'name' => 'titles',
+            'type' => 'group',
+            'layout' => 'row',
+            'sub_fields' => [
+                $titles
+            ]
         ];
 }
 
 function getButtons($args = []): array
 {
     return [
-       'label' => __('Click to Actions', 'flynt'),
-       'name' => 'CTA_links',
-       'type' => 'repeater',
-       'layout' => 'table',
-       'sub_fields' => [
+        'label' => __('Click to Actions', 'flynt'),
+        'name' => 'CTA_links',
+        'type' => 'repeater',
+        'layout' => 'table',
+        'sub_fields' => [
             [
                 'label' => __('Link', 'flynt'),
                 'name' => 'link',
@@ -343,8 +348,27 @@ function getButtons($args = []): array
                 ],
                 'default_value' => 'primary'
             ],
-       ],
-       'max' => 2
+        ],
+        'max' => 2
 
     ];
+}
+function getHeaderSlots($args = []): array
+{
+    return
+        [
+            'label' => __('Header Slots', 'flynt'),
+            'name' => 'headerSlots',
+            'type' => 'radio',
+            'layout' => 'horizontal',
+            'choices' => [
+
+                'h1' => __('H1', 'flynt'),
+                'h2' => __('H2', 'flynt'),
+                'h3' => __('H3', 'flynt'),
+
+            ],
+            'default_value' => 'h3'
+
+        ];
 }

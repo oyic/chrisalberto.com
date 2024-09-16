@@ -53,6 +53,11 @@
   --color-text-muted: hsl(0, 0%, 100%, 0.8);
 }
 
+[data-has-background] {
+  --color-text: hsla(0, 0%, 100%, 1);
+  background-size: cover;
+}
+
 $breakpoint-mobile-horizontal: 480px;
 $breakpoint-tablet: 768px;
 $breakpoint-tablet-horizontal: 1024px;
@@ -82,4 +87,5 @@ $breakpoint-desktop: 1280px;
   --color-primary: hsla(235, 17%, 25%,1);
   --color-secondary: hsla(202, 24%, 27%,1);
   --color-tertiary: hsla(193, 21%, 40%, 1);
+  --color-white: hsla(0, 0%, 100%, 1);
 }
