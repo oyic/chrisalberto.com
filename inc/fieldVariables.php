@@ -309,6 +309,7 @@ function getTitles($args = []): array
         [
             'label' => '',
             'name' => 'titles',
+            'instructions' => __('Want to add a headline? Go ahead! Or just leave it empty and nothing will be shown.', 'flynt'),
             'type' => 'group',
             'layout' => 'row',
             'sub_fields' => [
@@ -324,6 +325,7 @@ function getButtons($args = []): array
         'name' => 'CTA_links',
         'type' => 'repeater',
         'layout' => 'table',
+        'button_label' => __('Add CTA', 'flynt'),
         'sub_fields' => [
             [
                 'label' => __('Link', 'flynt'),

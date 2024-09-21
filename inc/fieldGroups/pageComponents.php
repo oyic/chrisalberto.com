@@ -16,6 +16,7 @@ add_action('Flynt/afterRegisterComponents', function (): void {
                 'button_label' => __('Add Component', 'flynt'),
                 'layouts' => [
                     Components\BlockHero\getACFLayout(),
+                    Components\GridCustomContents\getACFLayout(),
                     Components\BlockAnchor\getACFLayout(),
                     Components\BlockImage\getACFLayout(),
                     Components\BlockImageText\getACFLayout(),
