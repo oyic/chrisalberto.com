@@ -1,0 +1,36 @@
+{% if columns %}
+	<div class="items grid-container">
+		{% for item in columns %}
+			<div class="grid-item span-{{options.columnsPerRow}} " {{ options.asCard ? 'data-item-card' ~ '' }}>
+				{% if options.asIcon %}
+
+
+					<div class="asIcon {{options.iconPosition}} ">
+						<img src="{{item.columnImage.src}}" alt="{{item.columnTitle}}">
+						<div class="text">
+							<h4>{{item.columnTitle}}</h4>
+							{{ item.columnDescription|e('wp_kses_post') }}
+
+						</div>
+					</div>
+				{% else %}
+					{% if item.columnImage %}
+						<figure class="figure" data-size="medium" data-align="center">
+							<img class="figure-image lazyload" src="{{ item.columnImage.src|resizeDynamic(768) }}" width="{{ item.columnImage.width }}" height="{{ item.columnImage.height }}" srcset="{{ placeholderImage(item.columnImage.width, item.columnImage.height, 'rgba(125, 125, 125, 0.1)') }}" data-srcset="{{ item.columnImage.src|resizeDynamic(1920) }} 1920w, {{ item.columnImage.src|resizeDynamic(1600) }} 1600w, {{ item.columnImage.src|resizeDynamic(1440) }} 1440w, {{ item.columnImage.src|resizeDynamic(1366) }} 1366w, {{ item.columnImage.src|resizeDynamic(1024) }} 1024w, {{ item.columnImage.src|resizeDynamic(768) }} 768w, {{ item.columnImage.src|resizeDynamic(640) }} 640w" data-sizes="auto" alt="{{ item.columnImage.alt|e }}">
+							{% if item.columnImage.caption %}
+								<figcaption>{{ item.columnImage.caption|e }}</figcaption>
+							{% endif %}
+						</figure>
+						<div class="text">
+							<h4>{{item.columnTitle}}</h4>
+							{{ item.columnDescription|e('wp_kses_post') }}
+
+						</div>
+					{% endif %}
+				{% endif %}
+
+
+			</div>
+		{% endfor %}
+	</div>
+{% endif %}

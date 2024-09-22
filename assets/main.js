@@ -1,6 +1,6 @@
 import 'vite/modulepreload-polyfill'
 import FlyntComponent from './scripts/FlyntComponent'
-
+import dynamicCols from './scripts/dynamicCols'
 import 'lazysizes'
 
 if (import.meta.env.DEV) {
@@ -17,6 +17,7 @@ import.meta.glob([
   '!**/screenshot.png',
   '!**/*.md'
 ])
+dynamicCols()
 
 window.customElements.define(
   'flynt-component',

@@ -9,6 +9,10 @@
   }
 }
 
+p {
+  margin-block-start: 0.5rem;
+}
+
 body,
 .paragraph {
   color: var(--color-text);
@@ -410,8 +414,11 @@ flynt-component {
   position: relative;
 
   .container {
+    block-size: 100%;
+    margin-block-start: 0;
     position: relative;
     z-index: 2;
+
   }
 }
 
@@ -435,6 +442,7 @@ flynt-component {
   &[data-theme],
   &[data-has-background] {
     margin: 0;
+    overflow: hidden;
     padding-block: var(--component-spacing);
     padding-inline: 0;
   }
@@ -590,6 +598,7 @@ flynt-component {
 
 [data-has-background] {
   color: var(--color-text);
+  overflow: hidden;
 
   &::after {
     background: radial-gradient(circle, rgba(2, 5, 23, 0.596) 0%, rgba(0, 0, 0, .75) 100%);
@@ -635,6 +644,7 @@ h3 {
 
 .as-background {
   block-size: auto;
+  block-size: 100%;
   inline-size: 100%;
   inset-block-start: 0;
   inset-inline-start: 0;

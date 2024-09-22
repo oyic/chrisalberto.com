@@ -61,7 +61,6 @@ function getACFLayout(): array
                         'label' => __('Column Link', 'flynt'),
                         'name' => 'columnLink',
                         'type' => 'link',
-                        'required' => 1,
                     ],
                 ],
             ],
@@ -89,11 +88,10 @@ function getACFLayout(): array
                         'instructions' => __('Determines number of columns', 'flynt'),
                         'type' => 'select',
                         'choices' => [
-
-                            '2' => '2',
-                            '3' => '3',
-                            '4' => '4',
-                            '5' => '5',
+                            '6' => '2',
+                            '4' => '3',
+                            '3' => '4',
+                            '2' => '5',
                         ],
                         'default_value' => '3',
                         'wrapper' => [
@@ -106,13 +104,13 @@ function getACFLayout(): array
                         'type' => 'select',
                         'choices' => [
                             '0' => '0',
-                            '10' => '10',
-                            '20' => '20',
-                            '30' => '30',
-                            '40' => '40',
-                            '50' => '50',
+                            '10px' => '10px',
+                            '20px' => '20px',
+                            '30px' => '30px',
+                            '40px' => '40px',
+                            '50px' => '50px',
                         ],
-                        'default_value' => '30',
+                        'default_value' => '30px',
                         'wrapper' => [
                             'width' => '25',
                         ],
@@ -149,6 +147,26 @@ function getACFLayout(): array
                         'wrapper' => [
                             'width' => '25',
                         ],
+                    ],
+                    [
+                        'label' => __('Icon Position', 'flynt'),
+                        'name' => 'iconPosition',
+                        'type' => 'button_group',
+                        'choices' => [
+                            'left' => sprintf('<i class=\'dashicons dashicons-align-left\' title=\'%1$s\'></i>', __('Icon on the left', 'flynt')),
+                            'top' => sprintf('<i class=\'dashicons dashicons-editor-aligncenter\' title=\'%1$s\'></i>', __('Icon on the Top', 'flynt')),
+                        ],
+                        'default_value' => 'left',
+                        'conditional_logic' => [
+                            [
+                                [
+                                    'fieldPath' => 'asIcon',
+                                    'operator' => '==',
+                                    'value' => '1',
+                                ],
+                            ],
+                        ],
+
                     ],
                     [
                         'label' => __('Column Link as Button', 'flynt'),
