@@ -1,0 +1,25 @@
+{% if background.type=='image' and background.parallax != true %}
+	{% if background.type == 'image' %}
+		<figure class="figure" data-size="medium" data-align="center">
+			{% if background.image.post_mime_type == 'image/svg+xml' %}
+				<img class="figure-image-svg lazyload  as-background" src="{{ placeholderImage(background.image.width, background.image.height, 'rgba(125, 125, 125, 0.1)') }}" width="{{ background.image.width }}" height="{{ background.image.height }}" data-src="{{ background.image.src }}" alt="{{ background.image.alt|e }}">
+			{% else %}
+				<img class="figure-image lazyload  as-background" src="{{ background.image.src|resizeDynamic(768) }}" width="{{ background.image.width }}" height="{{ background.image.height }}" srcset="{{ placeholderImage(background.image.width, background.image.height, 'rgba(125, 125, 125, 0.1)') }}" data-srcset="
+															                {{ background.image.src|resizeDynamic(1920) }} 1920w,
+															                {{ background.image.src|resizeDynamic(1600) }} 1600w,
+															                {{ background.image.src|resizeDynamic(1440) }} 1440w,
+															                {{ background.image.src|resizeDynamic(1366) }} 1366w,
+															                {{ background.image.src|resizeDynamic(1024) }} 1024w,
+															                {{ background.image.src|resizeDynamic(768) }} 768w,
+															                {{ background.image.src|resizeDynamic(640) }} 640w" data-sizes="auto" alt="{{ background.image.alt|e }}">
+			{% endif %}
+			{% if background.image.caption %}
+				<figcaption>{{ background.image.caption|e }}</figcaption>
+			{% endif %}
+		</figure>
+	{% elseif background.type == 'video' %}
+		<video class="background-video" autoplay loop muted playsinline>
+			<source src="{{ background.src }}" type="video/mp4">
+		</video>
+	{% endif %}
+{% endif %}
