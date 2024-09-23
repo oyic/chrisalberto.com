@@ -1,4 +1,4 @@
-<flynt-component name="BlockHero" class="componentSpacing" {{ options.theme ? 'data-theme="' ~ options.theme ~ '"' }} {{ background.type=='color' ? 'data-theme="'~background.color ~ '"'}} {% if background.type in ['image','video'] %} data-has-background {% endif %} {% if background.type == 'image' and background.parallax %} style="background-image: url('{{ background.image.src }}');" data-parallax {% endif %}>
+<flynt-component name="BlockHero" class="componentSpacing {{ options.simpleHeader ? 'data-simple-header' ~ '' }}" {{ options.theme ? 'data-theme="' ~ options.theme ~ '"' }} {{ background.type=='color' ? 'data-theme="'~background.color ~ '"'}} {% if background.type in ['image','video'] %} data-has-background {% endif %} {% if background.type == 'image' and background.parallax %} style="background-image: url('{{ background.image.src }}');" data-parallax {% endif %}>
 	{% if background.type in ['image','video'] and background.parallax!=true %}
 		{% include 'Partials/_background.twig' %}
 	{% endif %}
@@ -8,10 +8,10 @@
 				<{{options.headerSlots}} class='titles'>
 					{% if titles.uppertile %}
 						<span class='uppertitle>{{titles.uppertitle}}</span>
-																			{% endif %}
-																			{{titles.title}}
-																			{% if titles.subtitle %}
-																				<span class=' subtitle'>{{titles.subtitle}}</span>
+																																								{% endif %}
+																																								{{titles.title}}
+																																								{% if titles.subtitle %}
+																																									<span class=' subtitle'>{{titles.subtitle}}</span>
 					{% endif %}
 
 				</{{options.headerSlots}}>

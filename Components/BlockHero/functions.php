@@ -46,7 +46,13 @@ function getACFLayout(): array
                 'layout' => 'row',
                 'sub_fields' => [
                     FieldVariables\getSize(),
-                    FieldVariables\getHeaderSlots()
+                    FieldVariables\getHeaderSlots(),
+                    [
+                        'label' => __('Simple Header', 'flynt'),
+                        'name' => 'simpleHeader',
+                        'type' => 'true_false',
+                        'ui' => 1,
+                    ]
                 ]
             ]
         ]

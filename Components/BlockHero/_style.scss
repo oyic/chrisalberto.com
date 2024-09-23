@@ -2,7 +2,12 @@ flynt-component[name='BlockHero'] {
   @import 'node_modules/locomotive-scroll/dist/locomotive-scroll';
 
   @media (min-width: $breakpoint-tablet-horizontal) {
+
     block-size: 100vh;
+
+    &.data-simple-header {
+      block-size: 50vh;
+    }
 
     .container {
       align-items: center;
@@ -24,5 +29,7 @@ flynt-component[name='BlockHero'] {
       }
 
     }
+
+
   }
 }
