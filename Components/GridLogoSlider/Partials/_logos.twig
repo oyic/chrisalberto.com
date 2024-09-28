@@ -2,9 +2,18 @@
 	<div class="slider">
 		<div class="slide-track">
 			{% for item in columns %}
+				{# {{ function('var_dump',item.columnLink) }} #}
 				<div class="slide">
+					{% if item.columnLink %}
 
-					<img src="{{ item.columnLogo.src }}" height="100" width="250" alt="{{ item.columnTitle }}"/>
+						<a href="{{ item.columnLink.url }}" {{ item.columnLink.target ? 'target="_blank"' : '' }} title="{{item.columnTitle}}">
+						{% endif %}
+
+
+						<img src="{{ item.columnLogo.src }}" height="100" width="250" alt="{{ item.columnTitle }}"/>
+						{% if item.columnLink %}
+						</a>
+					{% endif %}
 				</div>
 
 			{% endfor %}
