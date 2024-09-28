@@ -1,0 +1,43 @@
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(calc(-250px * 7))
+    }
+}
+
+.slider {
+    block-size: auto;
+    inline-size: auto;
+    margin: auto;
+    overflow: hidden;
+    position: relative;
+
+    .slide-track {
+        align-items: center;
+        animation: scroll 40s linear infinite;
+        column-gap: 50px;
+        display: flex;
+        inline-size: calc(200px * 13);
+        justify-content: center;
+
+        &:hover {
+            animation-play-state: paused;
+        }
+    }
+
+    .slide {
+        block-size: auto;
+        inline-size: 200px;
+
+        img {
+            inline-size: 100%;
+            max-block-size: 120px;
+            object-fit: contain;
+            object-position: center;
+
+        }
+    }
+}

@@ -637,8 +637,14 @@ h3 {
 
   .mainContent {
     flex: 1;
-    inline-size: 100vw;
+    inline-size: 85%;
     margin-inline-end: 0;
+  }
+
+  .NavigationMain {
+    flex: 1;
+    inline-size: 15%;
+    margin-inline-start: 0;
   }
 }
 

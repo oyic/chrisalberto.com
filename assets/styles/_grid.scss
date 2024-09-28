@@ -101,4 +101,9 @@ $gap: var(--grid-spacing);
     [class*="span-"] {
         grid-column-end: span 12;
     }
+
+    .grid-container {
+        display: flex;
+        flex-direction: column;
+    }
 }

@@ -1,0 +1,31 @@
+<flynt-component name="BlockContactForm" class="componentSpacing {{ options.simpleHeader ? 'data-simple-header' ~ '' }}" {{ options.theme ? 'data-theme="' ~ options.theme ~ '"' }} {{ background.type=='color' ? 'data-theme="'~background.color ~ '"'}} {% if background.type in ['image','video'] %} data-has-background {% endif %} {% if background.type == 'image' and background.parallax %} style="background-image: url('{{ background.image.src }}');" data-parallax {% endif %}>
+	{% if background.type in ['image','video'] and background.parallax!=true %}
+		{% include 'Partials/_background.twig' %}
+	{% endif %}
+	<div class="container" {{ imagePosition ? 'data-image-position="' ~ imagePosition ~ '"' }}>
+		<div data-size="{{options.size}}" data-align="center">
+			{% if titles %}
+				<{{options.headerSlots}} class='titles'>
+					{% if titles.uppertile %}
+						<span class='uppertitle>{{titles.uppertitle}}</span>
+																																																																																																																																																																																																		{% endif %}
+																																																																																																																																																																																																		{{titles.title}}
+																																																																																																																																																																																																		{% if titles.subtitle %}
+																																																																																																																																																																																																			<span class=' subtitle'>{{titles.subtitle}}</span>
+					{% endif %}
+
+				</{{options.headerSlots}}>
+			{% endif %}
+
+			{{ contentHtml|e('wp_kses_post') }}
+
+
+			{{ '[contact-form-7 id="contactForm" title="Contact form 1"]' | shortcodes }}
+
+
+			{% if CTA_links %}
+				{% include('Partials/_buttons.twig') %}
+			{% endif %}
+		</div>
+	</div>
+</flynt-component>

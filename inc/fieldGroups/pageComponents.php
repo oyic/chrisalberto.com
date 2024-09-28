@@ -17,6 +17,7 @@ add_action('Flynt/afterRegisterComponents', function (): void {
                 'layouts' => [
                     Components\BlockHero\getACFLayout(),
                     Components\GridCustomContents\getACFLayout(),
+                    Components\BlockContactForm\getACFLayout(),
                     Components\GridLogoSlider\getACFLayout(),
                     Components\BlockAnchor\getACFLayout(),
                     Components\BlockImage\getACFLayout(),

@@ -1,0 +1,14 @@
+{% if columns %}
+	<div class="slider">
+		<div class="slide-track">
+			{% for item in columns %}
+				<div class="slide">
+
+					<img src="{{ item.columnLogo.src }}" height="100" width="250" alt="{{ item.columnTitle }}"/>
+				</div>
+
+			{% endfor %}
+
+		</div>
+	</div>
+{% endif %}
