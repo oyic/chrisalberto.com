@@ -1,4 +1,4 @@
-<flynt-component name="BlockImageText" class="componentSpacing" {{ options.theme ? 'data-theme="' ~ options.theme ~ '"' }} {{ background.type=='color' ? 'data-theme="'~background.color ~ '"'}} {% if background.type in ['image','video'] %} data-has-background {% endif %} {% if background.type == 'image' and background.parallax %} style="background-image: url('{{ background.image.src }}');" data-parallax {% endif %}>
+<flynt-component name="BlockImageText" class="componentSpacing" {{ options.theme ? 'data-theme="' ~ options.theme ~ '"' }} {{ background.type=='color' ? 'data-theme="'~background.color ~ '"'}} {% if background.type in ['image','video','gradient'] %} data-has-background {% endif %} {% if background.type == 'image' and background.parallax %} style="background-image: url('{{ background.image.src }}');" data-parallax {% endif %} {% if background.type=='gradient' %} data-background-gradient {% endif %}>
 	{% if background.type in ['image','video'] and not background.parallax %}
 		{% include 'Partials/_background.twig' %}
 	{% endif %}

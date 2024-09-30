@@ -659,3 +659,7 @@ h3 {
   position: absolute;
   z-index: 0;
 }
+
+[data-background-gradient] {
+  background: linear-gradient(170deg, rgba(53, 55, 75, 0.8) 20%, rgba(53, 55, 75, 0.5) 20%, rgba(53, 55, 75, 0.5) 35%, rgba(52, 73, 85, 0.6) 35%, rgba(52, 73, 85, 0.8) 45%, rgba(81, 114, 123, 0.5) 45%, rgba(81, 114, 123, 0.8) 75%, rgba(53, 55, 75, 0.5) 75%), linear-gradient(45deg, rgba(50, 67, 98, 0.8) 0%, rgba(52, 73, 85, 0.8) 50%, rgba(82, 95, 122, 0.8) 50%, rgba(133, 146, 173, 0.8) 100%) #313949;
+}

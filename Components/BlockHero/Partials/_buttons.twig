@@ -1,7 +1,0 @@
-{% if CTA_links %}
-	<div class="groupContainer">
-		{% for CTA_link in CTA_links %}
-			<a class="button {{CTA_link.button_type}}" href="{{CTA_link.link.url}}">{{ CTA_link.customLabel ?: CTA_link.link.title }}</a>
-		{% endfor %}
-	</div>
-{% endif %}

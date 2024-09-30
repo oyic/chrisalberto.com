@@ -116,6 +116,7 @@ function getBackground($args = []): array
                             'image' => '<span class="dashicons dashicons-format-image" title="Image" ></span>',
                             'video' => '<span class="dashicons dashicons-format-video" title="Video" ></span>',
                             'color' => '<span class="dashicons dashicons-admin-appearance" title="Color" ></span>',
+                            'gradient' => '<span class="dashicons dashicons-art" title="Gradient" ></span>',
                         ],
                         'default_value' => 'none',
                         'layout' => 'horizontal'
