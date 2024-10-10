@@ -1,13 +1,13 @@
 .accordion-container {
     section {
         h4 {
-            display: flex;
             align-items: center;
+            display: flex;
 
             svg {
-                max-width: 24px;
-                margin-inline-end: 1rem;
                 display: inline-block;
+                margin-inline-end: 1rem;
+                max-inline-size: 24px;
                 stroke: var(--color-accent);
             }
         }
@@ -45,9 +45,9 @@
             position: relative;
 
             span {
+                align-items: center;
                 display: flex;
                 inline-size: 85%;
-                align-items: center;
 
 
             }
