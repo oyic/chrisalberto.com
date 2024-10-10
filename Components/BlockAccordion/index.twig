@@ -1,0 +1,21 @@
+<flynt-component name="BlockAccordion" class="componentSpacing {{ options.simpleHeader ? 'data-simple-header' ~ '' }}" {{ options.theme ? 'data-theme="' ~ options.theme ~ '"' }} {{ background.type=='color' ? 'data-theme="'~background.color ~ '"'}} {% if background.type in ['image','video','gradient'] %} data-has-background {% endif %} {% if background.type == 'image' and background.parallax %} style="background-image: url('{{ background.image.src }}');bacground-position:center;" data-parallax {% endif %} {% if background.type=='gradient' %} data-background-gradient {% endif %}>
+	{% if background.type in ['image','video'] and background.parallax!=true %}
+		{% include 'Partials/_background.twig' %}
+	{% endif %}
+	<div class="container">
+		<div class="content" data-size="{{ options.size }}" data-align="{{ options.align }}" data-text-align="{{ options.textAlign }}">
+			{% if titles %}
+				<h3 class='titles'>
+					{% if titles.uppertile %}
+						<span class='uppertitle'>{{titles.uppertitle}}</span>
+					{% endif %}
+					{{titles.title}}
+					{% if titles.subtitle %}
+						<span class='subtitle'>{{titles.subtitle}}</span>
+					{% endif %}
+				</h3>
+			{% endif %}
+			{% include('Partials/_items.twig') %}
+		</div>
+	</div>
+</flynt-component>

@@ -77,7 +77,7 @@
       "scss/at-rule-no-unknown": true,
       "selector-class-pattern": null,
       "max-nesting-depth": null,
-      "selector-max-compound-selectors": 4,
+      "selector-max-compound-selectors": 5,
       "selector-no-qualifying-type": null,
       "order/properties-alphabetical-order": true,
       "liberty/use-logical-spec": true

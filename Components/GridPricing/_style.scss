@@ -1,0 +1,8 @@
+flynt-component[name='GridPricing'] {
+  .container {
+    position: relative;
+  }
+
+  @import 'Partials/items';
+  // @import 'Partials/pagination';
+}

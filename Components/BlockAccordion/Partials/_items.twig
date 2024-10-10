@@ -1,0 +1,30 @@
+{% if accordionSections %}
+	<div class="accordion-container" data-size="wide">
+		{% for section in accordionSections %}
+			<section>
+				<h4>{{section.sectionTitle}}</h4>
+				{% if section.panelItems  %}
+					<ul class="accordion">
+						{% for panel in section.panelItems %}
+							<li class="panel">
+								<button class="panel-trigger bold" type="button" aria-expanded="false" aria-controls="content-{{ loop.index }}">
+									<span>
+										{{ panel.panelTitle|e }}
+									</span>
+								</button>
+								<div class="panel-content" aria-hidden="true" id="content-{{ loop.index }}">
+									<div class="panel-inner">
+										{{ panel.panelContent|e('wp_kses_post') }}
+									</div>
+								</div>
+							</li>
+						{% endfor %}
+					</ul>
+				{% endif %}
+
+
+			</section>
+
+		{% endfor %}
+	</div>
+</ul>{% endif %}

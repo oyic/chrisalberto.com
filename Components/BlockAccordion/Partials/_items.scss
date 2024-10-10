@@ -1,0 +1,87 @@
+.accordion-container {
+    section {
+        ul.accordion {
+
+            list-style: none;
+            padding-inline-start: 2rem;
+
+        }
+    }
+
+    .bold {
+        font-size: 105%;
+        font-weight: bold;
+    }
+
+    .panel {
+        overflow: hidden;
+        padding-block-end: 15px;
+
+        // padding: var(--flow-space);
+        // margin-bottom: var(--flow-space);
+
+        // &:last-child {
+        //   padding-bottom: 0;
+        // }
+
+        &-trigger {
+            cursor: pointer;
+            inline-size: 100%;
+            margin: 0;
+            // padding: 15px 30px 15px 0;
+            position: relative;
+
+            span {
+                display: inline-block;
+                inline-size: 85%;
+            }
+
+
+            &::after {
+
+
+                background-image: url("data:image/svg+xml;charset=utf8,%3Csvg width='32' height='32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolyline fill='none' stroke='rgb(#ff0)' stroke-width='2' points='2,9 16,25 30,9 '/%3E%3C/svg%3E");
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: 100%;
+                block-size: 100%;
+                content: '';
+                display: block;
+                inline-size: 20px;
+                inset-block-start: 0;
+                inset-inline-end: 0;
+                position: absolute;
+                transition: transform 0.2s cubic-bezier(0.165, 0.84, 0.44, 1);
+            }
+
+            &[aria-expanded='true'] {
+                &::after {
+                    transform: rotateX(180deg);
+                }
+            }
+        }
+
+        // do not add margins or padding to this, it will break the layout
+        &-content {
+            // visibility: hidden;
+            block-size: 0;
+            margin: 0;
+            padding: 0;
+            transition: block-size .5s ease-in;
+
+            &[aria-hidden='false'] {
+                // visibility: visible;
+            }
+        }
+
+        // add custom paddings here
+        &-inner {
+            background-color: rgba(#000, .05);
+            padding: var(--flow-space);
+
+            ul {
+                padding-inline-start: 0.5rem;
+            }
+        }
+    }
+}

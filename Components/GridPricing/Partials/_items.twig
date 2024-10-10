@@ -1,0 +1,54 @@
+{% if packageColumns %}
+	<div class="items grid-container" style='column-gap:20px'>
+		{% for item in packageColumns %}
+			<div class="grid-item span-4" data-item-card>
+				<div class="item-container">
+					<h4>
+						{{item.columnTitle}}
+						<div class="badge-label">
+							{{item.columnBadgeLabel}}
+						</div>
+					</h4>
+
+					<div class="price-container ">
+						<div class="price">
+							{{item.columnPrice}}
+						</div>
+					</div>
+					<div class="price-backward">
+						{{item.columnPrice}}
+					</div>
+					<div class="description">
+						{{item.columnPriceDescription}}
+					</div>
+					<div class="features">
+						<ul>
+							{% for feature in item.packageFeatures %}
+								<li>
+									{{feature.packageFeature}}
+								</li>
+							{% endfor %}
+						</ul>
+					</div>
+				</div>
+
+				<div class="lets-build">
+
+					<label for="hosting">
+						<input type="checkbox" name="hosting" id="hosting">
+						Include hosting $25/mo
+					</label>
+					<div class="groupContainer">
+						<a class='button animated-button'>Lets build now
+							<span></span>
+							<span></span>
+							<span></span>
+							<span></span>
+						</a>
+
+					</div>
+				</div>
+			</div>
+		{% endfor %}
+	</div>
+{% endif %}

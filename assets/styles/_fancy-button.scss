@@ -59,9 +59,10 @@
     }
 }
 
-
 .animated-button {
-    background: #f00;
+    background: linear-gradient(-30deg, #0b1b3d 50%, #08142b 50%);
+    border: 0;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
     box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
     color: #d4e0f7;
     display: inline-block;
@@ -75,6 +76,7 @@
     text-decoration: none;
     text-transform: uppercase;
     transform: translate(0%, 0%);
+    transform: translate(0%, 0%);
 }
 
 .animated-button::before {
@@ -87,6 +89,7 @@
     opacity: 0;
     position: absolute;
     transition: .2s opacity ease-in-out;
+    transition: .2s opacity ease-in-out;
 }
 
 .animated-button:hover::before {
@@ -98,9 +101,9 @@
 }
 
 .animated-button span:nth-child(1) {
-    // -webkit-animation: 2s animateTop linear infinite;
     animation: 2s animateTop linear infinite;
-    // background: -webkit-gradient(linear, right top, left top, from(rgba(8, 20, 43, 0)), to(#2662d9));
+    animation: 2s animateTop linear infinite;
+    background: -webkit-gradient(linear, right top, left top, from(rgba(8, 20, 43, 0)), to(#2662d9));
     background: linear-gradient(to left, rgba(8, 20, 43, 0), #2662d9);
     block-size: 2px;
     inline-size: 100%;
@@ -110,20 +113,32 @@
 
 @keyframes animateTop {
     0% {
-        // -webkit-transform: translateX(100%);
+        transform: translateX(100%);
         transform: translateX(100%);
     }
 
     100% {
-        // -webkit-transform: translateX(-100%);
+        transform: translateX(-100%);
+        transform: translateX(-100%);
+    }
+}
+
+@keyframes animateTop {
+    0% {
+        transform: translateX(100%);
+        transform: translateX(100%);
+    }
+
+    100% {
+        transform: translateX(-100%);
         transform: translateX(-100%);
     }
 }
 
 .animated-button span:nth-child(2) {
-    // -webkit-animation: 2s animateRight linear -1s infinite;
     animation: 2s animateRight linear -1s infinite;
-    // background: -webkit-gradient(linear, left bottom, left top, from(rgba(8, 20, 43, 0)), to(#2662d9));
+    animation: 2s animateRight linear -1s infinite;
+    background: -webkit-gradient(linear, left bottom, left top, from(rgba(8, 20, 43, 0)), to(#2662d9));
     background: linear-gradient(to top, rgba(8, 20, 43, 0), #2662d9);
     block-size: 100%;
     inline-size: 2px;
@@ -133,20 +148,32 @@
 
 @keyframes animateRight {
     0% {
-        // -webkit-transform: translateY(100%);
+        transform: translateY(100%);
         transform: translateY(100%);
     }
 
     100% {
-        // -webkit-transform: translateY(-100%);
+        transform: translateY(-100%);
+        transform: translateY(-100%);
+    }
+}
+
+@keyframes animateRight {
+    0% {
+        transform: translateY(100%);
+        transform: translateY(100%);
+    }
+
+    100% {
+        transform: translateY(-100%);
         transform: translateY(-100%);
     }
 }
 
 .animated-button span:nth-child(3) {
-    // -webkit-animation: 2s animateBottom linear infinite;
     animation: 2s animateBottom linear infinite;
-    // background: -webkit-gradient(linear, left top, right top, from(rgba(8, 20, 43, 0)), to(#2662d9));
+    animation: 2s animateBottom linear infinite;
+    background: -webkit-gradient(linear, left top, right top, from(rgba(8, 20, 43, 0)), to(#2662d9));
     background: linear-gradient(to right, rgba(8, 20, 43, 0), #2662d9);
     block-size: 2px;
     inline-size: 100%;
@@ -156,20 +183,32 @@
 
 @keyframes animateBottom {
     0% {
-        // -webkit-transform: translateX(-100%);
+        transform: translateX(-100%);
         transform: translateX(-100%);
     }
 
     100% {
-        // -webkit-transform: translateX(100%);
+        transform: translateX(100%);
+        transform: translateX(100%);
+    }
+}
+
+@keyframes animateBottom {
+    0% {
+        transform: translateX(-100%);
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(100%);
         transform: translateX(100%);
     }
 }
 
 .animated-button span:nth-child(4) {
-    // -webkit-animation: 2s animateLeft linear -1s infinite;
     animation: 2s animateLeft linear -1s infinite;
-    // background: -webkit-gradient(linear, left top, left bottom, from(rgba(8, 20, 43, 0)), to(#2662d9));
+    animation: 2s animateLeft linear -1s infinite;
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(8, 20, 43, 0)), to(#2662d9));
     background: linear-gradient(to bottom, rgba(8, 20, 43, 0), #2662d9);
     block-size: 100%;
     inline-size: 2px;
@@ -179,12 +218,24 @@
 
 @keyframes animateLeft {
     0% {
-        // -webkit-transform: translateY(-100%);
+        transform: translateY(-100%);
         transform: translateY(-100%);
     }
 
     100% {
-        // -webkit-transform: translateY(100%);
+        transform: translateY(100%);
+        transform: translateY(100%);
+    }
+}
+
+@keyframes animateLeft {
+    0% {
+        transform: translateY(-100%);
+        transform: translateY(-100%);
+    }
+
+    100% {
+        transform: translateY(100%);
         transform: translateY(100%);
     }
 }

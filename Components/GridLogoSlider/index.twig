@@ -1,4 +1,4 @@
-<flynt-component name="GridLogoSlider" class="componentSpacing" {{ options.theme ? 'data-theme="' ~ options.theme ~ '"' }} {{ background.type=='color' ? 'data-theme="'~background.color ~ '"'}} {% if background.type in ['image','video'] %} data-has-background {% endif %} {% if background.type == 'image' and background.parallax %} style="background-image: url('{{ background.image.src }}');" data-parallax {% endif %} data-columns="{{options.columnsPerRow}}" data-grid-spacing="{{options.columnsGap}}">
+<flynt-component name="GridLogoSlider" class="componentSpacing" {{ options.theme ? 'data-theme="' ~ options.theme ~ '"' }} {{ background.type=='color' ? 'data-theme="'~background.color ~ '"'}} {% if background.type in ['image','video'] %} data-has-background {% endif %} {% if background.type == 'image' and background.parallax %} style="background-image: url('{{ background.image.src }}');bacground-position:center;" data-parallax {% endif %} data-columns="{{options.columnsPerRow}}" data-grid-spacing="{{options.columnsGap}}">
 	<script type="application/json">{{ jsonData|json_encode }}</script>
 	{% if background.type in ['image','video'] and background.parallax!=true %}
 		{% include 'Partials/_background.twig' %}
@@ -9,10 +9,10 @@
 				<{{options.headerSlots}} class='titles'>
 					{% if titles.uppertile %}
 						<span class='uppertitle>{{titles.uppertitle}}</span>
-																																																																																		{% endif %}
-																																																																																		{{titles.title}}
-																																																																																		{% if titles.subtitle %}
-																																																																																			<span class=' subtitle'>{{titles.subtitle}}</span>
+																																																																																									{% endif %}
+																																																																																									{{titles.title}}
+																																																																																									{% if titles.subtitle %}
+																																																																																										<span class=' subtitle'>{{titles.subtitle}}</span>
 					{% endif %}
 
 				</{{options.headerSlots}}>

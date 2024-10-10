@@ -429,6 +429,17 @@ flynt-component {
   grid-template-rows: auto 1fr auto;
   min-block-size: 100%;
 
+  .blog & {
+    background: linear-gradient(170deg, rgba(53, 55, 75, 0.8) 20%, rgba(53, 55, 75, 0.5) 20%, rgba(53, 55, 75, 0.5) 35%, rgba(52, 73, 85, 0.6) 35%, rgba(52, 73, 85, 0.8) 45%, rgba(81, 114, 123, 0.5) 45%, rgba(81, 114, 123, 0.8) 75%, rgba(53, 55, 75, 0.5) 75%), linear-gradient(45deg, rgba(50, 67, 98, 0.8) 0%, rgba(52, 73, 85, 0.8) 50%, rgba(82, 95, 122, 0.8) 50%, rgba(133, 146, 173, 0.8) 100%) #4b5a78;
+    color: var(--color-white);
+  }
+
+  article {
+    // background: linear-gradient(170deg, rgba(53, 55, 75, 0.8) 20%, rgba(53, 55, 75, 0.5) 20%, rgba(53, 55, 75, 0.5) 35%, rgba(52, 73, 85, 0.6) 35%, rgba(52, 73, 85, 1) 45%, rgba(81, 114, 123, 1) 45%, rgba(81, 114, 123, 0.8) 75%, rgba(53, 55, 75, 0.5) 75%), linear-gradient(45deg, rgba(50, 67, 98, 0.8) 0%, rgba(52, 73, 85, 0.8) 50%, rgba(82, 95, 122, 0.8) 50%, rgba(69, 78, 96, 0.8) 100%) #4b5a78;
+    background-color: var(--color-secondary);
+    color: var(--color-white);
+  }
+
 
   .admin-bar & {
     padding-block-start: var(--wp-admin--admin-bar--height);
@@ -639,6 +650,10 @@ h3 {
     flex: 1;
     inline-size: 85%;
     margin-inline-end: 0;
+
+    artcle {
+      background-color: var(--color-background);
+    }
   }
 
   .NavigationMain {

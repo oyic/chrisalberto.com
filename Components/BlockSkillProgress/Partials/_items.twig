@@ -1,0 +1,12 @@
+{% if rowItems %}
+	<div class="items grid-container" style='column-gap:50px;'>
+		{% for item in rowItems %}
+			<div class="grid-item span-6">
+				<span class="title">
+					{{ item.itemTitle|e('wp_kses_post') }}
+				</span>
+				<div class="skill-progress" data-value="{{item.itemProgress}}" id="{{item.slug}}" aria-label="{{ item.itemTitle|e('wp_kses_post') }} Skill"></div>
+			</div>
+		{% endfor %}
+	</div>
+{% endif %}
