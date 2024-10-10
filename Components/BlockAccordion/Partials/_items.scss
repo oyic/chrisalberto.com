@@ -1,9 +1,21 @@
 .accordion-container {
     section {
+        h4 {
+            display: flex;
+            align-items: center;
+
+            svg {
+                max-width: 24px;
+                margin-inline-end: 1rem;
+                display: inline-block;
+                stroke: var(--color-accent);
+            }
+        }
+
         ul.accordion {
 
             list-style: none;
-            padding-inline-start: 2rem;
+            padding-inline-start: 2.5rem;
 
         }
     }
@@ -29,18 +41,22 @@
             inline-size: 100%;
             margin: 0;
             // padding: 15px 30px 15px 0;
+
             position: relative;
 
             span {
-                display: inline-block;
+                display: flex;
                 inline-size: 85%;
+                align-items: center;
+
+
             }
 
 
             &::after {
 
 
-                background-image: url("data:image/svg+xml;charset=utf8,%3Csvg width='32' height='32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolyline fill='none' stroke='rgb(#ff0)' stroke-width='2' points='2,9 16,25 30,9 '/%3E%3C/svg%3E");
+                background-image: url("data:image/svg+xml;charset=utf8,%3Csvg width='32' height='32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolyline fill='none' stroke='rgb(255, 255, 0)' stroke-width='2' points='2,9 16,25 30,9 '/%3E%3C/svg%3E");
                 background-position: center;
                 background-repeat: no-repeat;
                 background-size: 100%;
