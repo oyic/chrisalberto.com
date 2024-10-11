@@ -8,7 +8,7 @@ function getACFLayout(): array
 {
     return [
         'name' => 'BlockAccordion',
-        'label' => __('Block:Accordion', 'flynt'),
+        'label' => __('Block:Accordion History', 'flynt'),
         'sub_fields' => [
             [
                 'label' => __('Content', 'flynt'),
@@ -19,7 +19,7 @@ function getACFLayout(): array
             ],
             FieldVariables\getTitles(['subtitle']),
             [
-                'label' => __('Accordion Sections', 'flynt'),
+                'label' => __('Accordion History Sections', 'flynt'),
                 'name' => 'accordionSections',
                 'type' => 'repeater',
                 'layout' => 'row',
@@ -33,6 +33,16 @@ function getACFLayout(): array
 
                     ],
                     [
+                        'label' => __('Section Date', 'flynt'),
+                        'name' => 'sectionDate',
+                        'type' => 'text',
+                    ],
+                    [
+                        'label' => __('Section Subtitle', 'flynt'),
+                        'name' => 'sectionSubtitle',
+                        'type' => 'text',
+                    ],
+                    [
                         'label' => __('Panel Items', 'flynt'),
                         'name' => 'panelItems',
                         'type' => 'repeater',
@@ -41,6 +51,7 @@ function getACFLayout(): array
                         'min' => 1,
                         'button_label' => __('Add Panel Items', 'flynt'),
                         'sub_fields' => [
+
                             [
                                 'label' => __('Panel Title', 'flynt'),
                                 'name' => 'panelTitle',

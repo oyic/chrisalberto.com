@@ -50,7 +50,7 @@ function getACFLayout(): array
                         'required' => 1,
                         'min' => 1,
                         'max' => 10,
-                        'step_size' => 1,
+                        'step_size' => .5,
                         'default_value' => 3
                     ],
                 ]

@@ -3,26 +3,64 @@
         h4 {
             align-items: center;
             display: flex;
+        }
 
-            svg {
-                display: inline-block;
-                margin-inline-end: 1rem;
-                max-inline-size: 24px;
-                stroke: var(--color-accent);
+        p {
+            &:first-of-type {
+                margin: 0;
             }
         }
 
         ul.accordion {
 
             list-style: none;
-            padding-inline-start: 2.5rem;
+            padding-inline-start: 0.5rem;
 
+        }
+
+        .divider {
+            align-items: center;
+
+            display: flex;
+            justify-content: center;
+
+            .pointer {
+                background-color: var(--color-accent);
+                block-size: 100%;
+                inline-size: 1px;
+
+                &::after {
+                    background-color: #222;
+                    block-size: 11px;
+
+                    border: 2px solid #beff33;
+                    border-radius: 5px;
+                    content: '';
+                    display: block;
+                    inline-size: 11px;
+                    margin-block-start: 12px;
+                    margin-inline-start: -5px;
+                }
+            }
+
+            @media screen and (max-width:1024px) {
+                display: none;
+            }
         }
     }
 
     .bold {
         font-size: 105%;
         font-weight: bold;
+    }
+
+    .key-role {
+        svg {
+            display: inline-block;
+            margin-inline-end: 1rem;
+            max-inline-size: 24px;
+            stroke: var(--color-accent);
+        }
     }
 
     .panel {
@@ -47,10 +85,17 @@
             span {
                 align-items: center;
                 display: flex;
-                inline-size: 85%;
+                inline-size: 95%;
 
 
+                svg {
+                    display: inline-block;
+                    margin-inline-end: 1rem;
+                    max-inline-size: 24px;
+                    stroke: var(--color-accent);
+                }
             }
+
 
 
             &::after {
@@ -97,6 +142,11 @@
 
             ul {
                 padding-inline-start: 0.5rem;
+
+                strong {
+                    text-decoration: underline;
+                    text-decoration-color: var(--color-accent);
+                }
             }
         }
     }

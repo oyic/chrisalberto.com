@@ -33,7 +33,7 @@ add_action('Flynt/afterRegisterComponents', function (): void {
                     Components\ListComponents\getACFLayout(),
                     Components\SliderImages\getACFLayout(),
                     Components\ReusableComponent\getACFLayout(),
-                    Components\BlockCollapse\getACFLayout(),
+
                     Components\BlockSkillProgress\getACFLayout(),
                 ],
             ],
