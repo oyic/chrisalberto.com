@@ -9,5 +9,5 @@ VanillaTilt.init(document.querySelectorAll('.tilt-me'), {
   scale: 1.05,
   speed: 400,
   glare: true,
-  "max-glare": 0.1,
+  'max-glare': 0.1,
 })
