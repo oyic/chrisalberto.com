@@ -134,7 +134,7 @@ function getBackground($args = []): array
                         'wrapper' => [
                             'width' => 25
                         ],
-                        'library' => 'uploadedTo',
+                        'library' => 'all', //
                         'preview_size' => 'medium',
                         'conditional_logic' => [
                             [
