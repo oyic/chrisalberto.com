@@ -3,8 +3,6 @@
 		{% for item in columns %}
 			<div class="grid-item span-{{options.columnsPerRow}} tilt-me" {{ options.asCard ? 'data-item-card' ~ '' }}>
 				{% if options.asIcon %}
-
-
 					<div class="asIcon {{options.iconPosition}} ">
 						<img src="{{item.columnImage.src}}" alt="{{item.columnTitle}}">
 						<div class="text">
@@ -21,15 +19,17 @@
 								<figcaption>{{ item.columnImage.caption|e }}</figcaption>
 							{% endif %}
 						</figure>
+					{% endif %}
 						<div class="text">
 							<h4>{{item.columnTitle}}</h4>
 							{{ item.columnDescription|e('wp_kses_post') }}
-
+							{% if item.columnLink %}
+								<div class="cta">
+									<a href="{{ item.columnLink.url }}" class="button button--outline">{{ item.columnLink.title | default('See website') }}</a>
+								</div>
+							{% endif %}
 						</div>
-					{% endif %}
 				{% endif %}
-
-
 			</div>
 		{% endfor %}
 	</div>
